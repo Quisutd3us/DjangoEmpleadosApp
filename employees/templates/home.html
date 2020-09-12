@@ -1,0 +1,22 @@
+{% extends 'base.html.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row my-4">
+            <h3>Employees</h3>
+        </div>
+        <div class="row">
+            <table class="table">
+                {% for employee in employees %}
+                    <tr>
+                        <td>{{ employee.id }}</td>
+                        <td>{{ employee.first_name }}</td>
+                        <td>{{ employee.last_name }}</td>
+                        <td><a type="button" class="btn btn-primary" href="employee_detail/{{ employee.id }}">More info -></a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
